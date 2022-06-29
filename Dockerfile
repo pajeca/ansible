@@ -1,11 +1,18 @@
 FROM debian:bullseye-slim
 
+ARG username=ansible
+
 RUN apt-get update; \
-    apt install -y gcc python3 libkrb5-dev openssh-client openssh-server sshpass iputils-ping iproute2; \
-    apt install -y python3-pip; \
+    apt install -y gcc python3 libkrb5-dev openssh-client openssh-server sshpass iputils-ping iproute2 git; \
+    apt install -y python3-pip;
 
 RUN pip3 install --upgrade pip; \
     pip3 install pywinrm[kerberos]; \
     pip3 install pywinrm[credssp]; \
     pip3 install requests; \
-    python3 -m pip install ansible; \
+    pip3 install paramiko; \
+    python3 -m pip install ansible;
+
+RUN useradd -m $username
+USER $username
+WORKDIR /home/$username
