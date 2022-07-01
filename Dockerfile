@@ -11,6 +11,7 @@ RUN pip3 install --upgrade pip; \
     pip3 install pywinrm[credssp]; \
     pip3 install requests; \
     pip3 install paramiko; \
+    pip3 install boto3; \
     python3 -m pip install ansible;
 
 RUN useradd -m ${username};
