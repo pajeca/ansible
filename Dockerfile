@@ -13,6 +13,7 @@ RUN pip3 install --upgrade pip; \
     pip3 install paramiko; \
     python3 -m pip install ansible;
 
-RUN useradd -m $username
-USER $username
-WORKDIR /home/$username
+RUN useradd -m ${username};
+
+USER ${username}
+WORKDIR /home/${username}

@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  ansible:
+    build: .
+    volumes:
+      - ~/ansible/playbooks:/home/ansible/playbooks
+      - ~/.ssh:/home/ansible/.ssh
+      - ~/.gitconfig:/home/ansible/.gitconfig
+    stdin_open: true
+    tty: true
