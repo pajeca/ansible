@@ -1,3 +1,3 @@
-# ansible_playground
+# ansible
 
-Learning Ansible is fun.
+Ansible within a Docker Container
